@@ -15,16 +15,16 @@ export default function Hero() {
       {/* --- Contenido de Texto --- */}
       <div className="relative z-10 max-w-6xl mx-auto px-8">
         <motion.h1
-          className="text-white text-6xl md:text-8xl font-serif font-bold max-w-4xl"
+          className="text-white text-5xl md:text-7xl font-serif font-bold max-w-4xl"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeInOut' }}
         >
           Sol Baranda
-          <span className="block font-serif-italic">Artista plastica.</span>
+          <span className="block font-serif-italic">Artista plástica.</span>
         </motion.h1>
         <motion.p
-          className="text-white text-lg md:text-xl mt-6 max-w-lg"
+          className="text-white text-base md:text-lg mt-6 max-w-lg"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: 'easeInOut' }}

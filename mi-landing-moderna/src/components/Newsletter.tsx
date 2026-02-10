@@ -55,8 +55,8 @@ export default function Newsletter() {
       transition={{ duration: 1.2, ease: 'easeOut' }}
     >
       <div className="max-w-xl mx-auto text-center">
-        <h2 className="text-4xl font-serif font-bold">Iniciá una conversación.</h2>
-        <p className="text-lg text-gray-600 mt-4 mb-10">
+        <h2 className="text-3xl md:text-4xl font-serif font-bold">Iniciá una conversación.</h2>
+        <p className="text-base text-gray-600 mt-4 mb-10">
           Para consultas sobre adquisiciones, colecciones o detalles de una pieza, dejá tu mensaje.
         </p>
 

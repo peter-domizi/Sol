@@ -3,17 +3,46 @@ import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { useCallback, useState, useEffect } from 'react';
 
-// Datos de ejemplo
+// Colecciones de Sol Baranda (rutas adaptadas a imágenes disponibles)
 const collections = [
-  { title: 'SERIES 01', pieces: 8, img: '/imagenes/1.jpg' },
-  { title: 'SERIES 02', pieces: 6, img: '/imagenes/2.jpg' },
-  { title: 'SERIES 03', pieces: 4, img: '/imagenes/3.jpg' },
-  { title: 'SERIES 04', pieces: 5, img: '/imagenes/4.jpg' },
-  { title: 'SERIES 05', pieces: 7, img: '/imagenes/5.jpg' },
-  { title: 'SERIES 06', pieces: 3, img: '/imagenes/6.jpg' },
-  { title: 'SERIES 07', pieces: 9, img: '/imagenes/7.jpg' },
-  { title: 'SERIES 08', pieces: 2, img: '/imagenes/8.jpg' },
-  { title: 'SERIES 09', pieces: 6, img: '/imagenes/9.jpg' },
+  {
+    title: 'ALTIBAJOS',
+    images: [
+      '/imagenes/Altibajos/ALTIBAJOS 2.jpg',
+      '/imagenes/1.jpg',
+      '/imagenes/2.jpg',
+      '/imagenes/3.jpg',
+      '/imagenes/base.jpg',
+    ],
+  },
+  {
+    title: 'BUSILIS',
+    images: ['/imagenes/1.jpg', '/imagenes/2.jpg', '/imagenes/3.jpg', '/imagenes/4.jpg', '/imagenes/5.jpg', '/imagenes/6.jpg', '/imagenes/7.jpg'],
+  },
+  {
+    title: 'CALMA',
+    images: ['/imagenes/3.jpg', '/imagenes/4.jpg', '/imagenes/5.jpg', '/imagenes/6.jpg'],
+  },
+  {
+    title: 'ÍMPETU',
+    images: ['/imagenes/7.jpg', '/imagenes/8.jpg'],
+  },
+  {
+    title: 'LATENTE',
+    images: ['/imagenes/2.jpg', '/imagenes/4.jpg', '/imagenes/5.jpg'],
+  },
+  {
+    title: 'SUBLIME',
+    images: ['/imagenes/Sublime/SUBLIME 1 - SOL BARANDA.jpg', '/imagenes/Sublime/SUBLIME 3 - BARANDA MARIA SOL.jpg', '/imagenes/Sublime/SUBLIME 5 _ SOL BARANDA.jpg'],
+  },
+  {
+    title: 'SEGUNDAS OPORTUNIDADES',
+    images: ['/imagenes/Segundas_Oportunidades/Segundas Oportunidades 2_Baranda.jpg', '/imagenes/Segundas_Oportunidades/SEGUNDAS OPORTUNIDADES.jpeg'],
+  },
+  {
+    title: 'OTROS',
+    images: ['/imagenes/Otros/_1104.jpg', '/imagenes/Otros/_9856.jpg', '/imagenes/Otros/_9863.jpg', '/imagenes/Otros/_9866.jpg', '/imagenes/Otros/_9868.jpg'],
+  },
 ];
 
 export default function Collections() {
@@ -51,16 +80,10 @@ export default function Collections() {
     return () => window.removeEventListener('keydown', onKey);
   }, []);
 
-  const openCollection = (item: { title: string; pieces: number; img: string }, idx: number) => {
-    // Build an images array for the collection using available public images.
-    // We'll pick `pieces` images by cycling through the existing /imagenes/1.jpg..9.jpg
-    const pool = [1,2,3,4,5,6,7,8,9];
-    const imgs: string[] = [];
-    for (let i = 0; i < item.pieces; i++) {
-      const n = pool[(idx + i) % pool.length];
-      imgs.push(`/imagenes/${n}.jpg`);
-    }
-    setSelected({ index: idx, title: item.title, pieces: item.pieces, images: imgs });
+  const openCollection = (item: { title: string; images: string[] }, idx: number) => {
+    // Abrimos la colección usando el array `images` definido arriba.
+    const imgs = item.images || [];
+    setSelected({ index: idx, title: item.title, pieces: imgs.length, images: imgs });
     setSelectedImage(0);
   };
   const sectionVariants = {
@@ -81,10 +104,10 @@ export default function Collections() {
       viewport={{ once: true, amount: 0.2 }}
     >
       <div className="w-full px-6 md:px-10">
-        <h2 className="text-center text-5xl font-serif font-bold">
+        <h2 className="text-center text-4xl md:text-5xl font-serif font-bold">
           Colecciones
         </h2>
-        <p className="text-center text-lg text-gray-600 mt-4 max-w-xl mx-auto">
+        <p className="text-center text-base text-gray-600 mt-4 max-w-xl mx-auto">
           Explora las colecciones seleccionadas, cada una contando una
           historia única.
         </p>
@@ -100,16 +123,16 @@ export default function Collections() {
                   className="relative flex-[0_0_auto] w-72 md:w-80 lg:w-96 h-96 rounded-lg overflow-hidden group cursor-pointer"
                 >
                   <img
-                    src={item.img}
+                    src={item.images?.[0] || '/imagenes/base.jpg'}
                     alt={item.title}
                     className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-30 transition-opacity duration-300 group-hover:bg-opacity-40" />
                   <div className="absolute bottom-6 left-6 text-white">
-                    <h3 className="text-3xl font-bold uppercase tracking-wide">
+                    <h3 className="text-2xl font-bold uppercase tracking-wide">
                       {item.title}
                     </h3>
-                    <p className="text-sm opacity-90">{item.pieces} pieces</p>
+                    <p className="text-xs opacity-90 mt-1">{item.images?.length || 0} piezas</p>
                   </div>
                 </div>
               ))}
@@ -176,7 +199,7 @@ export default function Collections() {
                 <div className="flex items-start justify-between">
                   <div>
                     <h3 className="text-2xl font-serif font-bold">{selected.title}</h3>
-                    <p className="text-sm text-gray-500 mt-1">{selected.pieces} piezas</p>
+                    <p className="text-xs text-gray-500 mt-1">{selected.pieces} piezas</p>
                   </div>
                   <button onClick={() => setSelected(null)} className="text-gray-500 hover:text-black">Cerrar ✕</button>
                 </div>
@@ -184,12 +207,12 @@ export default function Collections() {
                 <hr className="my-4" />
 
                 <h4 className="text-lg font-semibold">Obra: {selectedImage + 1}</h4>
-                <p className="text-gray-700 mt-2">
+                <p className="text-base text-gray-700 mt-2">
                   Descripción de la obra seleccionada. Aquí podés colocar información sobre técnica, año, medidas y notas curatoriales.
                 </p>
 
                 <div className="mt-6">
-                  <h5 className="font-semibold">Detalles</h5>
+                  <h5 className="text-base font-semibold">Detalles</h5>
                   <p className="text-sm text-gray-600 mt-2">
                     Más información extendida sobre la serie o la pieza. Esto es un texto de ejemplo que podés reemplazar por contenido real.
                   </p>
