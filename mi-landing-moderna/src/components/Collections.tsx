@@ -206,17 +206,10 @@ export default function Collections() {
 
                 <hr className="my-4" />
 
-                <h4 className="text-lg font-semibold">Obra: {selectedImage + 1}</h4>
+                <h4 className="text-lg font-semibold">Obra</h4>
                 <p className="text-base text-gray-700 mt-2">
-                  Descripción de la obra seleccionada. Aquí podés colocar información sobre técnica, año, medidas y notas curatoriales.
+                  Esta obra pertenece a la colección {selected.title}
                 </p>
-
-                <div className="mt-6">
-                  <h5 className="text-base font-semibold">Detalles</h5>
-                  <p className="text-sm text-gray-600 mt-2">
-                    Más información extendida sobre la serie o la pieza. Esto es un texto de ejemplo que podés reemplazar por contenido real.
-                  </p>
-                </div>
               </div>
             </div>
           </div>
