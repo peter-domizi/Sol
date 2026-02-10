@@ -1,0 +1,18 @@
+# System files
+.DS_Store
+Thumbs.db
+.trash/
+
+# Build artifacts and archives
+*.zip
+*.rar
+*.tar.gz
+DO_NOT_UPLOAD_HERE
+
+# Dependencies
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

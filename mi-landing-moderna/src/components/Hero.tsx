@@ -21,16 +21,7 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: 'easeInOut' }}
         >
           Sol Baranda
-          <span className="block font-serif-italic">Artista plástica.</span>
         </motion.h1>
-        <motion.p
-          className="text-white text-base md:text-lg mt-6 max-w-lg"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3, ease: 'easeInOut' }}
-        >
-          Arte abstracto que captura la esencia del movimiento y el color.
-        </motion.p>
       </div>
     </section>
   );

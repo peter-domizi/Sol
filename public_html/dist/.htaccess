@@ -1,0 +1,14 @@
+# Vite/React SPA rewrite rules for Apache (Hostinger)
+Options -MultiViews
+RewriteEngine On
+
+# If you deploy in a subfolder, replace "/" with your subfolder, e.g. "/mi-sitio/"
+RewriteBase /
+
+# Serve existing files/folders directly
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Otherwise, fallback to index.html (client-side routing)
+RewriteRule ^ index.html [L]
