@@ -45,6 +45,7 @@ export default function Newsletter() {
 
   return (
     <motion.section
+      id="contact"
       className="py-24 px-8"
       style={{
         backgroundColor: '#fcfcfc',
