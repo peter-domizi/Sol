@@ -8,62 +8,90 @@ const collections = [
   {
     title: 'ALTIBAJOS',
     images: [
-      '/imagenes/ALTIBAJOS 2.jpg',
       '/imagenes/ALTIBAJOS 1_SOL BARANDA.jpg',
+      '/imagenes/ALTIBAJOS 1_SOL BARANDA_1.jpg',
+      '/imagenes/ALTIBAJOS 2.jpg',
       '/imagenes/Altibajos 3-4926.jpg',
+      '/imagenes/Altibajos 3-4926_1.jpg',
       '/imagenes/Altibajos 4-4929.jpg',
+      '/imagenes/Altibajos 4-4929_1.jpg',
       '/imagenes/Altibajos 9-4873.jpg',
+      '/imagenes/Altibajos 9-4873_1.jpg',
     ],
   },
   {
     title: 'BUSILIS',
     images: [
       '/imagenes/Busilis 3-4892.jpg',
+      '/imagenes/Busilis 3-4892_1.jpg',
       '/imagenes/Busilis 4-A-4887.jpg',
+      '/imagenes/Busilis 4-A-4887_1.jpg',
       '/imagenes/Busilis 4-B-4883.jpg',
+      '/imagenes/Busilis 4-B-4883_1.jpg',
       '/imagenes/Busilis 5-4878.jpg',
+      '/imagenes/Busilis 5-4878_1.jpg',
       '/imagenes/Busilis 6 4956.jpg',
+      '/imagenes/Busilis 6 4956_1.jpg',
       '/imagenes/Busilis 7-4880.jpg',
+      '/imagenes/Busilis 7-4880_1.jpg',
       '/imagenes/Busilis 8-4941.jpg',
+      '/imagenes/Busilis 8-4941_1.jpg',
     ],
   },
   {
     title: 'CALMA',
     images: [
-      '/imagenes/CALMA 5 - Sol Baranda.jpg',
       '/imagenes/Calma 1.jpg',
+      '/imagenes/Calma 1_1.jpg',
       '/imagenes/Calma 2-4859.jpg',
+      '/imagenes/Calma 2-4859_1.jpg',
       '/imagenes/Calma 4959.jpg',
+      '/imagenes/Calma 4959_1.jpg',
+      '/imagenes/CALMA 5 - Sol Baranda.jpg',
+      '/imagenes/CALMA 5 - Sol Baranda_1.jpg',
     ],
   },
   {
     title: 'ÍMPETU',
     images: [
       '/imagenes/Impetu 1-4975.jpg',
+      '/imagenes/Impetu 1-4975_1.jpg',
       '/imagenes/Impetu 2-4968.jpg',
+      '/imagenes/Impetu 2-4968_1.jpg',
     ],
   },
   {
     title: 'LATENTE',
     images: [
       '/imagenes/Latente 2-4903.jpg',
+      '/imagenes/Latente 2-4903_1.jpg',
       '/imagenes/Latente 2-4970.jpg',
+      '/imagenes/Latente 2-4970_1.jpg',
       '/imagenes/Latente 4-5027.jpg',
+      '/imagenes/Latente 4-5027_1.jpg',
     ],
   },
   {
     title: 'SUBLIME',
     images: [
       '/imagenes/SUBLIME 1 - SOL BARANDA.jpg',
+      '/imagenes/SUBLIME 2 - BARANDA MARIA SOL.jpg',
       '/imagenes/SUBLIME 3 - BARANDA MARIA SOL.jpg',
       '/imagenes/SUBLIME 5 _ SOL BARANDA.jpg',
+      '/imagenes/SUBLIME 7 _ SOL BARANDA.jpg',
     ],
   },
   {
     title: 'SEGUNDAS OPORTUNIDADES',
     images: [
-      '/imagenes/SEGUNDAS OPORTUNIDADES.jpeg',
+      '/imagenes/Segundas Oportunidades 1 - Sol Baranda.jpg',
       '/imagenes/Segundas Oportunidades 2_Baranda.jpg',
+      '/imagenes/Segundas Oportunidades 7 - Sol Baranda.jpg',
+      '/imagenes/Segundas Oportunidades 9 - Sol Baranda.jpg',
+      '/imagenes/Segundas Oportunidades 10 - Sol Baranda.jpg',
+      '/imagenes/Segundas Oportunidades 11 - Sol Baranda.jpg',
+      '/imagenes/Segundas Oportunidades 12 - Sol Baranda.jpg',
+      '/imagenes/SEGUNDAS OPORTUNIDADES.jpeg',
     ],
   },
   {
@@ -74,7 +102,6 @@ const collections = [
       '/imagenes/_9863.jpg',
       '/imagenes/_9866.jpg',
       '/imagenes/_9868.jpg',
-      '/imagenes/base.jpg',
     ],
   },
 ];
@@ -139,10 +166,10 @@ export default function Collections() {
     >
       <div className="w-full px-6 md:px-10">
         <h2 className="text-center text-5xl md:text-7xl font-serif font-bold mb-6">
-          Colecciones
+          Series
         </h2>
         <p className="text-center text-xl md:text-2xl text-gray-600 mt-6 max-w-4xl mx-auto leading-relaxed">
-          Explora las colecciones seleccionadas, cada una contando una
+          Explora las series seleccionadas, cada una contando una
           historia única.
         </p>
 
@@ -244,7 +271,7 @@ export default function Collections() {
               {/* Right: Descripción (Estilo Editorial) */}
               <div className="w-full md:w-[40%] p-10 md:p-16 flex flex-col justify-center bg-white overflow-y-auto">
                 <div>
-                  <p className="text-gray-400 text-lg uppercase tracking-widest font-medium mb-3">Colección</p>
+                  <p className="text-gray-400 text-lg uppercase tracking-widest font-medium mb-3">Serie</p>
                   <h3 className="text-5xl md:text-6xl font-serif font-bold text-gray-900 leading-[0.9] mb-4">
                     {selected.title}
                   </h3>
@@ -254,15 +281,7 @@ export default function Collections() {
                   </div>
                 </div>
 
-                <div className="space-y-6">
-                  <div>
-                    <h4 className="text-xl font-serif font-bold mb-3 border-l-4 border-black pl-4">Sobre la obra</h4>
-                    <p className="text-lg text-gray-600 leading-relaxed pl-5">
-                      Esta pieza forma parte de la serie <span className="font-semibold text-gray-900">{selected.title}</span>.
-                      Una exploración visual que invita a la contemplación a través de formas abstractas y texturas profundas.
-                    </p>
-                  </div>
-                </div>
+
 
                 <div className="mt-auto pt-12">
                   <button

@@ -58,7 +58,7 @@ export default function Newsletter() {
       <div className="max-w-xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-serif font-bold">Iniciá una conversación.</h2>
         <p className="text-base text-gray-600 mt-4 mb-10">
-          Para consultas sobre adquisiciones, colecciones o detalles de una pieza, dejá tu mensaje.
+          Para consultas sobre adquisiciones, series o detalles de una pieza, dejá tu mensaje.
         </p>
 
         {/* --- FORMULARIO PREPARADO PARA FORMSPREE --- */}

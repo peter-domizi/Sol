@@ -10,7 +10,8 @@ const timelineData: TimelineEvent[] = [
   {
     year: '2024',
     events: [
-      'Exhibición Colectiva Virtual, Expo Metro, Milan, octubre'
+      'Exhibición Colectiva Virtual, Expo Metro, Milan, octubre',
+      'Exposición Colectiva en Cultura Viva, junio'
     ]
   },
   {

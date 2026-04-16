@@ -51,7 +51,7 @@ export default function About() {
           </motion.div>
           <motion.div variants={itemVariants}>
             <img
-              src="/imagenes/Retratos/retrato.jpg"
+              src="/imagenes/Sol Baranda.jpg"
               alt="Sol Baranda con su obra"
               className="w-full h-auto object-cover rounded-lg shadow-lg"
             />
